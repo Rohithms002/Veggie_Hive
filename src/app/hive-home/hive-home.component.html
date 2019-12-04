@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+<nav class="navbar navbar-expand-md navbar-dark">
+    <img src="../../assets/logo.JPG" width="80" height="60" class="d-inline-block align-top" alt=""> &nbsp;
+    <h2 style="color: white;">VEGGIE HIVE</h2> <sub style="color: white; margin-left: 5px;">Rent A Storage For Your Vegetabales
+  </sub> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a *ngIf="!loginService.isUserLoggedIn() || loginService.isUserLoggedIn()" class="nav-link" routerLink="/home">
+                    <h6>About<i class="fa fa-home" style="font-size:24px"></i></h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/booking">
+                    <h6>Book Storage<i class="fa fa-check-square-o" style="font-size:24px"></i></h6>
+
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/reports">
+                    <h6>View / Analyse Reports <i class="fa fa-bar-chart-o" style="font-size:24px"></i></h6>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a *ngIf="!loginService.isUserLoggedIn() || loginService.isUserLoggedIn()" class="nav-link" routerLink="/contact">
+                    <h6>Contact us<i class="fa fa-phone" style="font-size:24px"></i></h6>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav mt-auto">
+            <li class="nav-item">
+                <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="/register">
+                    <h6>Register <i class="fa fa-edit" style="font-size:24px"></i>
+                    </h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="/login">
+                    <h6>Login <i class="fa fa-sign-in" style="font-size:24px"></i></h6>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav float-right">
+            <li>
+                <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">
+                    <h6> LogOut <i class="fa fa-sign-out" style="font-size:24px"></i>
+                    </h6>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+</html>

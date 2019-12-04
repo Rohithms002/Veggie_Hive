@@ -1,0 +1,12 @@
+<div class="col-md-6">
+    <div id="lineChart" style="display: block;">
+        <canvas baseChart width="10" height="10" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins">
+    </canvas>
+    </div>
+
+    <div id="barChart" style="display: block;">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+    </canvas>
+    </div>
+
+</div>

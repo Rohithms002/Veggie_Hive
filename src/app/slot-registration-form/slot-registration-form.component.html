@@ -1,0 +1,56 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div class="bg-img">
+        <form action="/action_page.php" #registerFormData="ngForm" class="container">
+            <h1>Register</h1>
+
+            <div class="form-group">
+                <label for="fname"><b>Full Name</b></label>
+                <input type="text" placeholder="Enter First Name" name="fullname" style="border-radius: 50px" ngModel #fullname="ngModel" required>
+                <div *ngIf='fullname.touched && fullname.invalid' class="alert alert-danger">
+                    <p *ngIf='fullname.errors.minlength'>minimum length is 4 characters</p>
+                    <p *ngIf='fullname.errors.required'>fullname is required</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" style="border-radius: 50px" ngModel #email="ngModel" required>
+                        <div *ngIf='email.touched && email.invalid' class="alert alert-danger">
+                            <p *ngIf='email.errors.minlength'>minimum length is 4 characters</p>
+                            <p *ngIf='email.errors.required'>email is required</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="contact"><b>Contact Number</b></label>
+                        <input type="text" placeholder="Enter Contact Number" name="phonenumber" style="border-radius: 50px" ngModel #phonenumber="ngModel" required>
+                        <div *ngIf='phonenumber.touched && phonenumber.invalid' class="alert alert-danger">
+                            <p *ngIf='phonenumber.errors.minlength'>minimum length is 4 characters</p>
+                            <p *ngIf='phonenumber.errors.required'>Phone Numder is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" style="border-radius: 50px" ngModel #password="ngModel" required>
+            <div *ngIf='password.touched && password.invalid' class="alert alert-danger">
+                <p *ngIf='password.errors.minlength'>minimum length is 4 characters</p>
+                <p *ngIf='password.errors.required'>password is required</p>
+            </div>
+
+            <button type="button" class="btn btn-outline-success float-right form-control" [disabled]="registerFormData.invalid" (click)="registerUser(registerFormData)">Register</button>
+
+            <p>Already a Tenant? <a href="login">Login</a></p>
+        </form>
+    </div>
+
+
+</body>

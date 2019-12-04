@@ -1,0 +1,13 @@
+p {
+    font-family: Lato;
+}
+
+#lineChart {
+    width: 459px;
+    height: 495px;
+}
+
+#barChart {
+    width: 459px;
+    height: 495px;
+}

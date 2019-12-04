@@ -1,0 +1,42 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="bg-img">
+        <div id="login">
+            <form action="#" #loginForm="ngForm" class="container">
+                <div class="alert-danger" [hidden]="!submitted">
+                    <h5>Email and Password did not match</h5>
+                </div>
+                <h1>Login</h1>
+                <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter  Email" name="email" class="form-control" style="border-radius: 50px" ngModel #email="ngModel" pattern='^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$' />
+                    <div *ngIf='email.touched && email.invalid' class="alert alert-danger">
+                        <p *ngIf='email.errors.minlength'>minimum length is 4 characters</p>
+                        <p *ngIf='email.errors.required'>username is required</p>
+                        <p *ngIf='email.errors.pattern'>this takes an email</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="psw"><b>Password</b></label>
+
+                    <input id="mysecretpassword" type="password" placeholder="Enter Password" name="password" class="form-control" style="border-radius: 50px" required ngModel #password="ngModel">
+
+                    <!-- <i matSuffix class="material-icons" showHideTrigger="mysecretpassword" [showHideStatus]="{ materialIcon: true, id: 'mysecretpassword' }"></i> -->
+                    <div *ngIf='password.touched && password.invalid' class="alert alert-danger">
+                        <p *ngIf='password.errors.minlength'>minimum length is 4 characters</p>
+                        <p *ngIf='password.errors.required'>password is required</p>
+                    </div>
+
+                </div>
+
+                <button type="button" class="btn btn-outline-success float-right form-control" [disabled]="loginForm.invalid" (click)="login(loginForm)">Login</button>
+                <p> </p>
+                <p>New to Veggie Hive?<a href="/register">Register</a></p>
+            </form>
+        </div>
+    </div>
+</body>
